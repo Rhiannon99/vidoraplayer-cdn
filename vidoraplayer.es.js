@@ -9889,7 +9889,7 @@ const Xq = (a, e) => ({
     },
     addImage(t) {
       var l;
-      const n = e(), i = window.__REZEPLAYER_CONFIG__, r = (((l = i == null ? void 0 : i.settings) == null ? void 0 : l.thumbsInterval) || 1e4) / 1e3, s = Math.floor(t.at / r) * r, g = n.thumbnails.images.find((d) => Math.abs(d.at - s) < r);
+      const n = e(), i = window.__VIDORAPLAYER_CONFIG__, r = (((l = i == null ? void 0 : i.settings) == null ? void 0 : l.thumbsInterval) || 1e4) / 1e3, s = Math.floor(t.at / r) * r, g = n.thumbnails.images.find((d) => Math.abs(d.at - s) < r);
       if (g && Math.abs(g.at - t.at) < r)
         return;
       const u = n.thumbnails.images.findIndex((d) => d.at >= t.at);
@@ -37136,7 +37136,7 @@ function Cee({
   var p, h;
   const {
     t: e
-  } = la(), t = da(a), n = (h = (p = window.__REZEPLAYER_CONFIG__) == null ? void 0 : p.settings) == null ? void 0 : h.themeColor, i = n ? n.startsWith("#") ? n : `#${n}` : "#8652bb", r = k.useMemo(() => [n ? {
+  } = la(), t = da(a), n = (h = (p = window.__VIDORAPLAYER_CONFIG__) == null ? void 0 : p.settings) == null ? void 0 : h.themeColor, i = n ? n.startsWith("#") ? n : `#${n}` : "#8652bb", r = k.useMemo(() => [n ? {
     name: "Default",
     value: i
   } : {
@@ -169802,7 +169802,7 @@ function Vre({
   U((f) => f.sourceId);
   const u = r ? r.name || ng(s || "") || e("player.menus.subtitles.unknownLanguage") : void 0, o = U((f) => f.source), l = i ? ng(i.language) ?? i.label ?? e("player.menus.subtitles.unknownLanguage") : "Default", d = o !== null;
   (o == null ? void 0 : o.type) === "file" || (o == null || o.type);
-  const c = window.__REZEPLAYER_CONFIG__;
+  const c = window.__VIDORAPLAYER_CONFIG__;
   return (p = c == null ? void 0 : c.settings) == null || p.enableWatchParty, (h = c == null ? void 0 : c.settings) == null || h.enableCast, (y = c == null ? void 0 : c.settings) == null || y.themeSettings, /* @__PURE__ */ S.jsx(X.Card, { children: /* @__PURE__ */ S.jsxs(X.Section, { className: "pb-2", children: [
     /* @__PURE__ */ S.jsx(X.ChevronLink, { onClick: () => t.navigate("/playback"), rightText: "Normal", children: /* @__PURE__ */ S.jsxs("div", { className: "flex items-center", children: [
       /* @__PURE__ */ S.jsx(ze, { icon: he.TACHOMETER, className: "mr-3 text-xl text-white opacity-80" }),
@@ -169827,7 +169827,7 @@ function Hre({
 }) {
   const {
     t: e
-  } = la(), t = da(a), n = U((g) => g.sourceId), i = U((g) => g.setSourceId), r = window.__REZEPLAYER_CONFIG__, s = (r == null ? void 0 : r.servers) || [];
+  } = la(), t = da(a), n = U((g) => g.sourceId), i = U((g) => g.setSourceId), r = window.__VIDORAPLAYER_CONFIG__, s = (r == null ? void 0 : r.servers) || [];
   return /* @__PURE__ */ S.jsxs(S.Fragment, { children: [
     /* @__PURE__ */ S.jsx(X.BackLink, { onClick: () => t.navigate("/"), children: e("player.menus.sources.title") }),
     /* @__PURE__ */ S.jsx(X.Section, { className: "pb-4", children: s.map((g) => /* @__PURE__ */ S.jsx(tg, { onClick: () => {
@@ -171115,7 +171115,7 @@ class Tse {
     const e = this.videoEl;
     if (!e) return;
     await this.initVideo();
-    const t = window.__REZEPLAYER_CONFIG__, n = ((r = t == null ? void 0 : t.settings) == null ? void 0 : r.thumbsInterval) || 1e4, i = Sse(e.duration, n);
+    const t = window.__VIDORAPLAYER_CONFIG__, n = ((r = t == null ? void 0 : t.settings) == null ? void 0 : r.thumbsInterval) || 1e4, i = Sse(e.duration, n);
     for (let s = 0; s < i.length; s += 1) {
       if (this.interrupted) return;
       await this.takeSnapshot(i[s]);
@@ -171126,7 +171126,7 @@ function CC() {
   var d, c;
   const a = U((p) => p.thumbnails.addImage), e = U((p) => p.status), t = U((p) => p.thumbnails.resetImages), n = U((p) => p.meta), i = U((p) => p.source), r = ai((p) => p.enableThumbnails), s = k.useRef(null), g = JSON.stringify(i), u = k.useCallback(() => {
     var m;
-    const p = window.__REZEPLAYER_CONFIG__;
+    const p = window.__VIDORAPLAYER_CONFIG__;
     if (!(((m = p == null ? void 0 : p.settings) == null ? void 0 : m.thumbsGenerate) ?? !0)) return;
     let y = null;
     if (i && (y = $re(i)), s.current || e !== aa.PLAYING || !y) return;
@@ -171187,7 +171187,7 @@ const vse = function() {
   }), r = U((f) => f.caption.asTrack), s = ai((f) => f.enableNativeSubtitles), g = U((f) => {
     var m;
     return (m = f.caption.selected) == null ? void 0 : m.language;
-  }), u = U((f) => f.source), o = U((f) => f.interface.isFullscreen), l = r || s && u !== null, d = Dse(() => i ? rne(i) : null, [i]), c = window.__REZEPLAYER_CONFIG__, p = (y = c == null ? void 0 : c.settings) == null ? void 0 : y.posterUrl;
+  }), u = U((f) => f.source), o = U((f) => f.interface.isFullscreen), l = r || s && u !== null, d = Dse(() => i ? rne(i) : null, [i]), c = window.__VIDORAPLAYER_CONFIG__, p = (y = c == null ? void 0 : c.settings) == null ? void 0 : y.posterUrl;
   k.useEffect(() => {
     n && e.current && n.processVideoElement(e.current);
   }, [n, e]), k.useEffect(() => {
@@ -171566,7 +171566,7 @@ function Vse() {
 }
 function Hse() {
   const [a, e] = k.useState(!1), t = k.useRef(null), n = U((s) => s.sourceId), i = k.useMemo(() => {
-    const s = window.__REZEPLAYER_CONFIG__;
+    const s = window.__VIDORAPLAYER_CONFIG__;
     return (s == null ? void 0 : s.servers) || [];
   }, []);
   k.useMemo(() => i.find((s) => s.name === n), [i, n]), k.useEffect(() => {
@@ -171646,7 +171646,7 @@ function Zse() {
   const {
     showTargets: a,
     showTouchTargets: e
-  } = Vse(), t = ai((f) => f.setEnableThumbnails), n = k.useRef(-1), i = window.__REZEPLAYER_CONFIG__, r = ((y = i == null ? void 0 : i.settings) == null ? void 0 : y.enableCast) ?? !0, s = k.useMemo(
+  } = Vse(), t = ai((f) => f.setEnableThumbnails), n = k.useRef(-1), i = window.__VIDORAPLAYER_CONFIG__, r = ((y = i == null ? void 0 : i.settings) == null ? void 0 : y.enableCast) ?? !0, s = k.useMemo(
     () => (i == null ? void 0 : i.skipSegments) || [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
@@ -171660,7 +171660,7 @@ function Zse() {
     playMedia: d,
     setMeta: c
   } = vC(), p = k.useCallback((f) => {
-    const m = window.__REZEPLAYER_CONFIG__;
+    const m = window.__VIDORAPLAYER_CONFIG__;
     if (!m || !m.servers || f >= m.servers.length) return;
     const b = m.servers[f];
     c({
@@ -171717,7 +171717,7 @@ function Zse() {
     });
   }, [d, c]);
   k.useEffect(() => {
-    const f = window.__REZEPLAYER_CONFIG__;
+    const f = window.__VIDORAPLAYER_CONFIG__;
     if (!f) {
       console.error("RezePlayer: No config found. Did you call RezePlayer.make()?");
       return;
@@ -171734,7 +171734,7 @@ function Zse() {
   const h = U((f) => f.sourceId);
   return k.useEffect(() => {
     if (!h || n.current === -1) return;
-    const f = window.__REZEPLAYER_CONFIG__;
+    const f = window.__VIDORAPLAYER_CONFIG__;
     if (!f) return;
     const m = f.servers.findIndex((b) => b.name === h);
     m !== -1 && m !== n.current && (console.log(`Switching to server: ${h}`), p(m));
@@ -171809,14 +171809,14 @@ class Qse {
     if (this.eventListeners = /* @__PURE__ */ new Map(), this.unsubscribe = null, typeof e == "string") {
       const n = document.querySelector(e);
       if (!n)
-        throw new Error(`RezePlayer: Element not found: ${e}`);
+        throw new Error(`VidoraPlayer: Element not found: ${e}`);
       this.container = n;
     } else
       this.container = e;
     this.options = t, this.init();
   }
   init() {
-    if (window.__REZEPLAYER_CONFIG__ = {
+    if (window.__VIDORAPLAYER_CONFIG__ = {
       servers: this.options.servers.map((e) => ({
         name: e.name,
         url: e.url,
@@ -171936,7 +171936,7 @@ function _C(a, e) {
     off: (n, i) => t.off(n, i)
   };
 }
-typeof window < "u" && (window.RezePlayer = {
+typeof window < "u" && (window.VidoraPlayer = {
   make: _C
 });
 const hge = {
@@ -171946,4 +171946,4 @@ export {
   hge as default,
   _C as make
 };
-//# sourceMappingURL=rezeplayer.es.js.map
+//# sourceMappingURL=vidoraplayer.es.js.map
