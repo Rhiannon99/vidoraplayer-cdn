@@ -168191,9 +168191,9 @@ const Lie = function({
   } = Dg(), l = U((v) => v.captionList), d = k.useRef(null), c = U((v) => v.setCaption), p = ga((v) => v.setCustomSubs), h = ga((v) => v.setDetailsViewLanguage), f = U((v) => {
     var x;
     return (x = v.display) == null ? void 0 : x.getCaptionList;
-  }), m = rC((v) => v.language), y = k.useMemo(() => l.length !== 0 ? l : (f == null ? void 0 : f()) ?? [], [l, f]), b = ((A = window.__VIDORAPLAYER_CONFIG__) == null ? void 0 : A.groupSubtitles) !== !1, S = k.useMemo(() => {
+  }), m = rC((v) => v.language), y = ((A = window.__VIDORAPLAYER_CONFIG__) == null ? void 0 : A.groupSubtitles) === !0, b = k.useMemo(() => y ? l.length !== 0 ? l : (f == null ? void 0 : f()) ?? [] : l, [l, f, y]), S = k.useMemo(() => {
     const v = {};
-    y.forEach((w) => {
+    b.forEach((w) => {
       const _ = w.language || "unknown", R = iae(_) || _;
       v[R] || (v[R] = []), v[R].push(w);
     });
@@ -168206,7 +168206,7 @@ const Lie = function({
         languageName: R
       });
     }), x.sort((w, _) => w.language === m ? -1 : _.language === m ? 1 : w.languageName.localeCompare(_.languageName));
-  }, [y, i, m]);
+  }, [b, i, m]);
   return /* @__PURE__ */ T.jsxs(T.Fragment, { children: [
     /* @__PURE__ */ T.jsxs("div", { className: "border-b border-white/10 pb-2 mb-2", children: [
       /* @__PURE__ */ T.jsxs("button", { type: "button", onClick: () => r.navigate(t ? "/captions/settings" : "/captions/settingsOverlay"), className: "flex items-center justify-between mx-2 mt-2 mb-1 px-3 py-2.5 hover:bg-white/10 transition-colors text-left group rounded-lg w-[calc(100%-1rem)]", children: [
@@ -168246,7 +168246,7 @@ const Lie = function({
     ] }),
     /* @__PURE__ */ T.jsxs(X.ScrollToActiveSection, { className: "!pt-1 pb-3", children: [
       /* @__PURE__ */ T.jsx(xo, { onClick: () => u(), selected: !s, children: i("player.menus.subtitles.offChoice") }),
-      b ? /* @__PURE__ */ T.jsxs(T.Fragment, { children: [
+      y ? /* @__PURE__ */ T.jsxs(T.Fragment, { children: [
         S.map(({
           language: v,
           languageName: x,
@@ -168259,8 +168259,8 @@ const Lie = function({
         ] }) }, v)),
         S.length === 0 && /* @__PURE__ */ T.jsx("div", { className: "text-center text-video-context-type-secondary py-2", children: i("player.menus.subtitles.notFound") })
       ] }) : /* @__PURE__ */ T.jsxs(T.Fragment, { children: [
-        y.map((v) => /* @__PURE__ */ T.jsx(xo, { selected: s === v.id, flagUrl: v.flagsapi, source: v.opensubtitles ? "opensubs" : v.source, onClick: () => o(v.id), children: v.name || v.language }, v.id)),
-        y.length === 0 && /* @__PURE__ */ T.jsx("div", { className: "text-center text-video-context-type-secondary py-2", children: i("player.menus.subtitles.notFound") })
+        b.map((v) => /* @__PURE__ */ T.jsx(xo, { selected: s === v.id, flagUrl: v.flagsapi, source: v.opensubtitles ? "opensubs" : v.source, onClick: () => o(v.id), children: v.name || v.language }, v.id)),
+        b.length === 0 && /* @__PURE__ */ T.jsx("div", { className: "text-center text-video-context-type-secondary py-2", children: i("player.menus.subtitles.notFound") })
       ] })
     ] })
   ] });
